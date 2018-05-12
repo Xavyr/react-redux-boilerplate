@@ -10,11 +10,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/amorijs/react-boilerplate.git"
+    "url": "git+https://github.com/Xavyr/xavyr-react-redux-boilerplate"
   },
   "author": "xavyr",
   "license": "MIT",
-  "homepage": "https://github.com/amorijs/react-boilerplate#readme",
+  "homepage": "https://github.com/Xavyr/xavyr-react-redux-boilerplate",
   "dependencies": {
     "axios": "^0.17.1",
     "babel-cli": "^6.26.0",
