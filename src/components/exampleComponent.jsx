@@ -1,6 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 const ExampleComponent = props =>
-  <h3>example component</h3>
+  <div>
+    <button>SyncAction</button>
+    <button>AsyncAction</button>
+  </div>
+
 
 export default ExampleComponent;

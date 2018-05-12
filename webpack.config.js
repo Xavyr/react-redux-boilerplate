@@ -34,7 +34,7 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, 'public'),
 	  proxy: {
-		  "/api/*": "http://localhost:3000" //slash api for ajax would send me to lh3000 plus any routes
+		  "/api*": "http://localhost:3000"
 	  }
   },
 };

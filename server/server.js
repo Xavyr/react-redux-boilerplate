@@ -1,10 +1,5 @@
 //npm modules
 const express = require('express');
-const mongoose = require('mongoose');
-
-//files
-
-
 const path = require('path');
 
 //the actual express app instance;
@@ -18,9 +13,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //pathing to specific files
 app.use(express.static(path.join(__dirname, './../public')));
 
-app.get('/', (req, res) => {
-	console.log('hit the slash and redirected to login- make use of cookies here');
-	//automatically serving the index.html out of the app.use route.
+app.get('/api', (req, res) => {
+	console.log('hit the home route');
+	res.send('from home api route');
 });
 
 

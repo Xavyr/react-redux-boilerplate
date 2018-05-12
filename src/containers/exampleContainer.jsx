@@ -1,5 +1,22 @@
 import React, { Component } from 'react';
 import ExampleComponent from '../components/exampleComponent.jsx';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as actions from '../action/actions'
+
+
+const mapStateToProps = (store) => {
+  return {
+    store: store.data,
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    synAction: actions.syncAction,
+    asynAction: actions.asyncAction
+  }, dispatch)
+};
 
 
 class ExampleContainer extends Component {
@@ -18,4 +35,4 @@ class ExampleContainer extends Component {
   }
 }
 
-export default ExampleContainer;
+export default connect(mapStateToProps, mapDispatchToProps)(ExampleContainer);
