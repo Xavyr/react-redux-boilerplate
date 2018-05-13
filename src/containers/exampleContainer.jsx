@@ -7,14 +7,15 @@ import * as actions from '../action/actions'
 
 const mapStateToProps = (store) => {
   return {
-    store: store.data,
+    syncData: store.firstReducer.syncData,
+    asyncData: store.firstReducer.asyncData,
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
-    synAction: actions.syncAction,
-    asynAction: actions.asyncAction
+    syncAction: actions.syncAction,
+    asyncAction: actions.asyncAction
   }, dispatch)
 };
 
@@ -28,8 +29,13 @@ class ExampleContainer extends Component {
   render() {
     return (
       <div>
-        <h1>Example Container Header</h1>
-        <ExampleComponent/>
+        <h1 style={{textAlign: 'center'}}>Example Container Header</h1>
+        <ExampleComponent
+          syncAction={this.props.syncAction}
+          syncData={this.props.syncData}
+          asyncAction={this.props.asyncAction}
+          asyncData={this.props.asyncData}
+        />
       </div>
     );
   }

@@ -12,21 +12,10 @@ import * as types from '../constants/actionTypes.js'
 //organized into the standard object with type and payload (newNasaData).
 export const asyncAction = () => {
   return dispatch => {
-    const fetchedPromise = fetch(URL)
-      .then(function(response) {
-        return response.json();
-      })
-      .then(function(jsonResponse) {
-        return jsonResponse;
-      });
-
-    function payloadForReducer(jsonResponse) {
-      return { type: types.FIRST_REDUCER, payload: jsonResponse  }
-    }
-
-    return fetchedPromise.then(
-      response => dispatch(payloadForReducer(response)),
-    );
+    console.log('false => true in 3, 2, 1...');
+    return setTimeout(function(){
+      return dispatch({ type: types.ASYNC_ACTION, payload: true  })
+    }, 3000);
   }
 };
 
@@ -35,7 +24,7 @@ export const asyncAction = () => {
 // (for the reducer's case statement),
 //and the payload that will be used to update the store.
 export const syncAction = () => {
-  return {type: types.FIRST_REDUCER, payload: 'something'}
+  return {type: types.SYNC_ACTION, payload: true}
 }
 
 
