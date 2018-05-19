@@ -1,32 +1,40 @@
-const webpack = require('webpack');
+const path = require('path');
 
 module.exports = {
-  entry: [
-    'react-hot-loader/patch',
-    './src/index.js'
-  ],
+  entry: './src/index.js',
+  output: {
+    path: path.join(__dirname, 'public'),
+    filename: 'bundle.js'
+  },
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: ['babel-loader']
+        loader: 'babel-loader',
+        test: /\.js$|\.jsx$/,
+        exclude: /node_modules/
+      },
+      {
+        test: /.scss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader']
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/,
+        use: [
+          'url-loader'
+        ]
       }
     ]
   },
-  resolve: {
-    extensions: ['*', '.js', '.jsx']
-  },
-  output: {
-    path: __dirname + '/dist',
-    publicPath: '///',
-    filename: 'bundle.js'
-  },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin()
-  ],
+
+  // Dev tools are provided by webpack
+  // Source maps help map errors to original react code
+  devtool: 'cheap-module-eval-source-map',
+
+  // Configuration for webpack-dev-server
   devServer: {
-    contentBase: './dist',
-    hot: true
-  }
+    contentBase: path.join(__dirname, 'public'),
+    proxy: {
+      "/api*": "http://localhost:3000"
+    }
+  },
 };

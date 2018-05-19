@@ -10,11 +10,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Xavyr/xavyr-react-redux-boilerplate"
+    "url": "git+https://github.com/Xavyr/react-redux-boilerplate"
   },
   "author": "Xavyr",
   "license": "MIT",
-  "homepage": "https://github.com/Xavyr/xavyr-react-redux-boilerplate",
+  "homepage": "https://github.com/Xavyr/react-redux-boilerplate",
   "dependencies": {
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
