@@ -4,8 +4,7 @@
   "description": "Modern React Redux Boilerplate",
   "main": "index.js",
   "scripts": {
-    "start": "webpack && live-server public",
-    "start-dev": "webpack-dev-server --config ./webpack.config.js --mode development",
+    "start": "webpack-dev-server --config ./webpack.config.js --mode development",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
