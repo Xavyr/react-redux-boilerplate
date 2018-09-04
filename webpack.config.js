@@ -14,8 +14,17 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /.scss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader']
+        test: /\.scss$/,
+        use: [{
+          loader: "style-loader"
+        }, {
+          loader: "css-loader"
+        }, {
+          loader: "sass-loader",
+          options: {
+            includePaths: ["absolute/path/a", "absolute/path/b"]
+          }
+        }]
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/,

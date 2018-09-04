@@ -3,6 +3,8 @@ import DumbComponent from '../components/DumbComponent.jsx';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../action/actions'
+import './App.css';
+import './App.scss';
 
 
 const mapStateToProps = (store) => {
@@ -29,7 +31,7 @@ class Container extends Component {
   render() {
     return (
       <div>
-        <h1 style={{ textAlign: 'center' }}>Container</h1>
+        <h1 className="container">Container</h1>
         <DumbComponent
           syncAction={this.props.syncAction}
           syncData={this.props.syncData}
