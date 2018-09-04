@@ -1,7 +1,7 @@
 const initialState = {
   syncData: false,
   asyncData: false,
-
+  count: 0
 }
 
 //The action passed into our reducer comes from the dispatch.

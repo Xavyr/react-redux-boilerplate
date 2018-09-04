@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ExampleComponent from '../components/exampleComponent.jsx';
+import DumbComponent from '../components/DumbComponent.jsx';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../action/actions'
@@ -20,7 +20,7 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 
-class ExampleContainer extends Component {
+class Container extends Component {
 
   componentDidMount() {
     console.log('exampleContainer did mount');
@@ -29,8 +29,8 @@ class ExampleContainer extends Component {
   render() {
     return (
       <div>
-        <h1 style={{textAlign: 'center'}}>Example Container Header</h1>
-        <ExampleComponent
+        <h1 style={{ textAlign: 'center' }}>Container</h1>
+        <DumbComponent
           syncAction={this.props.syncAction}
           syncData={this.props.syncData}
           asyncAction={this.props.asyncAction}
@@ -41,4 +41,4 @@ class ExampleContainer extends Component {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ExampleContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(Container);
