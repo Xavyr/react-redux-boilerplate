@@ -2,10 +2,14 @@ import React from 'react';
 
 const DumbComponent = props =>
   <div>
-    <button onClick={() => props.syncAction(props.syncData)}>SyncAction</button>
+    <button
+      className='syncB'
+      onClick={() => props.syncAction(props.syncData)}>
+      SyncAction</button>
     <button
       style={{ display: 'inline', float: 'right' }}
-      onClick={() => props.asyncAction(props.asyncData)}>AsyncAction
+      onClick={() => props.asyncAction(props.asyncData)}>
+      AsyncAction
     </button>
     <br />
     <h1 style={{ display: 'inline', float: 'left' }}>{JSON.stringify(props.syncData)}</h1>
