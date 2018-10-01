@@ -3,7 +3,6 @@ import DumbComponent from '../components/DumbComponent.jsx';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../action/actions'
-import './App.css';
 import './App.scss';
 
 
