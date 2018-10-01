@@ -7,4 +7,4 @@ Jest and SASS are configured using Babel.
 
 With regards to Redux I've instantiated a single reducer, very simple store and two action dispatchers; one synchronous action and one asynchronous using Thunk middleware.
 
-I hope this gets you up to speed with regards to your react/redux applications faster. 
+I hope this gets you up to speed with regards to your react/redux applications faster.
